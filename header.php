@@ -125,41 +125,6 @@ unset($terms);
     <script type="Text/JavaScript" src="<?php bloginfo('stylesheet_directory') ?>/ResBox/JS/Calendar_ESPX.js"></script>
     <script type="Text/JavaScript" src="<?php bloginfo('stylesheet_directory') ?>/ResBox/JS/fechas_ESPX.js"></script>
     <script type="Text/JavaScript" src="<?php bloginfo('stylesheet_directory') ?>/ResBox/JS/DefaultX.js"></script>
-    	  
-
-<script type="text/javascript" src="http://cdn.onswipe.com/synapse/on.js?usr=luisabarca&phone=1" id="onswipe_synapse"></script>
-<?php /*
-<link rel="stylesheet" type="text/css" href="/Partners/ResBox/_lib/CSS/ResBox.css" />
-<script type="Text/JavaScript" src="/Partners/ResBox/_lib/JS/Default_ESPX.js"></script>
-<script type="Text/JavaScript" src="/Partners/ResBox/_lib/JS/Calendar_ESPX.js"></script>
-<script type="Text/JavaScript" src="/Partners/ResBox/_lib/JS/fechas_ESPX.js"></script>
-<script type="Text/JavaScript" src="/Partners/ResBox/_lib/JS/DefaultX.js"></script>
-*/ ?>
-
-<?php if (is_user_logged_in()): ?>
-<script type="text/javascript">
-jQuery(document).ready(function()
-{
-	jQuery('.edit-link').each(function()
-	{
-		jQuery(this).fadeOut('fast');
-	});
-	
-	jQuery('.post').each(function()
-	{
-		jQuery(this).hover(function()
-		{
-			jQuery("#edit-" + jQuery(this).attr("id")).fadeIn('fast');
-		},
-
-		function()
-        {
-            jQuery("#edit-" + jQuery(this).attr("id")).fadeOut('fast');
-        });
-	});	
-});
-</script>
-<?php endif; ?>
 
 <?php wp_head(); ?>
 </head>
