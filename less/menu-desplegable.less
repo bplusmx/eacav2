@@ -1,0 +1,151 @@
+/*
+ * Menú desplegable del portal Guerrero
+ * 
+ */
+ @menu_border_width: 1px;
+ @menu_border_color: #bbbbbb;
+ @menu_border_shadow_color: #cacaca;
+ @menu_border_medium_width: 3px;
+ @menu_border_bottom_1st_color: #ed1b24;
+ @menu_border_bottom_2nd_color: #eb8111;
+ @menu_border_bottom_3rd_color: #0173af;
+ @menu_border_bottom_4th_color: #84b22c;
+ 
+.topmenu {
+    margin: 0;
+    padding: 0;
+    margin-left: 8px;
+    
+    li {
+        height: 80px;
+        width: 49%;
+        display: inline-block;
+        padding: 4px 8px;
+        border-left: 1px solid @menu_border_color;
+        border-bottom: @menu_border_medium_width solid;
+        vertical-align: top;
+        margin-left: -4px;
+        
+        /* Menu Tramites */
+        &:nth-child(1) {
+            border-left: none;
+            border-bottom-color: @menu_border_bottom_1st_color;
+        }
+        
+        /* Menu Secciones */
+        &:nth-child(2) {
+            border-bottom-color: @menu_border_bottom_2nd_color;
+        }
+        
+        /* Menu Descubre Guerrero */
+        &:nth-child(3) {
+            border-left: none;
+            border-bottom-color: @menu_border_bottom_3rd_color;
+        }
+        
+        /* Menu Gobierno */
+        &:nth-child(4) {
+            border-bottom-color: @menu_border_bottom_4th_color;
+        }
+        
+        a {
+            color: #444;
+            text-decoration: none;
+            font-weight: bold;
+            
+            span {
+                display: block;
+                font-weight: normal;
+                font-size: 0.8em;
+            }
+        }
+    }
+}
+
+/* Extra small devices (phones, less than 768px) */
+/* No media query since this is the default in Bootstrap */
+
+/* Small devices (tablets, 768px and up) */
+@media (min-width: @screen-sm-min) {
+    .topmenu {
+        margin-left: 48px;
+        
+        li {
+            height: 62px;
+            width: 90px;
+            text-align: center;
+            line-height: 50px;
+            
+            /* Menu Tramites */
+            &:nth-child(1) {
+                border-left: @menu_border_medium_width solid @menu_border_shadow_color;
+            }
+            
+            /* Menu Descubre Guerrero */
+            &:nth-child(3) {
+                border-left: 1px solid @menu_border_color;
+                width: 155px;
+            }
+            
+            /* Menu Gobierno */
+            &:nth-child(4) {
+                border-right: @menu_border_medium_width solid @menu_border_shadow_color;
+            }
+            
+            a  {
+                font-size: 1em;
+                
+                span {
+                    display: none;
+                }
+            }
+        }
+    }
+} /* End small/tablets devices */
+
+/* Medium devices (desktops, 992px and up) */
+@media (min-width: @screen-md-min) {
+    .topmenu {
+        li {
+            width: 120px;
+            line-height: 1.1em;
+            text-align: left;
+            
+            &:nth-child(3) {
+                width: 200px;
+            }
+            
+            a {
+                font-size: 1.2em;
+                
+                span {
+                    display: block;
+                    font-size: 0.65em;
+                }
+            }
+        }
+    }
+} /* End medium devices */
+
+/* Large devices (large desktops, 1200px and up) */
+@media (min-width: @screen-lg-min) {
+    .topmenu {
+        li {
+            width: 160px;
+            text-align: left;
+            
+            &:nth-child(3) {
+                width: 200px;
+            }
+            
+            a {
+                font-size: 1.3em;
+                
+                span {
+                    display: block;
+                    font-size: 0.7em;
+                }
+            }
+        }
+    }
+} /* End large devices */

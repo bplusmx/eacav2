@@ -1,0 +1,111 @@
+/* 
+    Document   : featured-box
+    Author     : luisabarca
+    Description:
+        Estilos de los bloques de contenidos destacados donde se muestra 1 noticia grande y 
+        2 o más noticias pequeñas.
+*/
+
+/* Caja con una nota destacada y 2 o mas destacadas con imagen diminuta a mediana */
+.featured-box {
+    min-height: 230px;
+    padding-top: 8px;
+    
+    .featured-img {
+        padding-left: 0;
+        
+        h3 {
+            font-size: 1.2em;
+            
+            a {
+                color: #444;
+                font-weight: bold;
+            }
+        }
+    } /* /featured-img */
+    
+    /* Lista de 5 noticias junto a la noticia principal */
+    .featured-list {
+        h4 {
+            font-weight: bold;
+            margin: 2px;
+        }
+        
+        ul {
+            padding: 0;
+            list-style-type: none;
+            
+            li {
+                padding: 0 0 6px 0;
+                line-height: 1.2em;
+                font-size: 0.8em;
+            }
+            
+            a {
+                font-weight: normal;
+                color: #444;
+            }
+        }
+    } /* featured-list */
+} /* /featured-box */
+
+/* Small devices (tablets, 768px and up) */
+@media (min-width: @screen-sm-min) {
+    .featured-box {
+        .col-sm-4 {
+            padding-left: 0;
+        }
+        
+        .col-sm-8 {
+            padding-left: 0;
+            padding-right: 0;
+            
+            h3 a {
+                font-size: 1.3em;
+            }
+        }
+    }
+} /* End small/tablets devices */
+
+/* Medium devices (desktops, 992px and up) */
+@media (min-width: @screen-md-min) {
+    /* Caja con una nota destacada y 2 o mas destacadas con imagen diminuta a mediana */
+    .featured-box {
+        .col-sm-8 {
+            h3 a {
+                font-size: 1.2em;
+            }
+        }
+        
+        .featured-img { 
+            h3 {
+                a {
+                }
+            }
+        } /* /featured-img */
+        
+        /* Lista de 2 a 5 noticias junto a la noticia principal */
+        .featured-list {
+            /* Recorre contenidos destacados a la izquierda en las versiones tablets wide y escritorio */
+            padding-left: 0;
+            margin-left: -5px;
+        
+            h4 {
+                font-weight: bold;
+                margin: 2px;
+            }
+            
+            ul {
+            }
+        } /* featured-list */
+        
+    } /* /featured-box */
+    
+} /* End medium devices */
+
+/* Large devices (large desktops, 1200px and up) */
+@media (min-width: @screen-lg-min) {
+    
+} /* End large devices */
+
+    

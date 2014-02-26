@@ -1,0 +1,70 @@
+/* 
+    Document   : style
+    Author     : luisabarca
+    Description:
+        Estilos de la caja de lo mas buscado.
+*/
+
+@ep_font_color: white;
+@ep_base_color: #dd222e;
+@ep_element_color: darken(@ep_base_color, 10%);
+@ep_element_hover_color: darken(@ep_base_color, 15%);
+
+.editors-pick {
+    position: relative;
+    z-index: 200;
+    margin-top: -490px;
+    margin-bottom: 70px;
+    color: @ep_font_color;
+    
+    div {
+        background-color: @ep_base_color; 
+        padding: 15px 0; 
+        
+        h3 {
+            margin-top: 0;
+            padding-left: 10px;
+            font-size: 1.5em !important;
+        }
+    }
+    
+    a {
+        color: @ep_font_color;
+        
+        span {
+            color: @ep_base_color; /* El mismo color que el de fondo */
+            font-size: 1.5em;
+            line-height: 0.8em;
+        }
+        
+        &:hover {
+            background-color: @ep_element_hover_color !important;
+            
+            span {
+                color: @ep_font_color;
+            }
+        }
+    }
+    
+    li {
+        background-color: @ep_element_color;
+    }
+}
+
+
+/* Small devices (tablets, 768px and up) */
+@media (min-width: @screen-sm-min) {
+    
+} /* End small/tablets devices */
+
+/* Medium devices (desktops, 992px and up) */
+@media (min-width: @screen-md-min) {
+    
+} /* End medium devices */
+
+/* Large devices (large desktops, 1200px and up) */
+@media (min-width: @screen-lg-min) {
+    
+} /* End large devices */
+
+    

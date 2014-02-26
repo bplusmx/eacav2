@@ -1,0 +1,81 @@
+/* 
+    Document   : style
+    Author     : luisabarca
+    Description:
+        Estilos del ticker de noticias.
+*/
+
+@ticker_font_color: white;
+@ticker_highlight_color: #ed1c24; /* Puede ser red */
+@ticker_border_width: 4px;
+@ticker_border_color: @ticker_highlight_color;
+
+.ticker {
+    position: relative;
+    z-index: 100;
+    min-height: 100px;
+    border-top: @ticker_border_width solid @ticker_border_color;
+    background-color: fadeout(#000, 30%);
+    /*
+    opacity: 0.8;
+    filter:alpha(opacity=80);
+    -moz-opacity:.80;
+    */
+    
+    a {
+        color: @ticker_font_color;
+        
+        &:hover {
+            text-decoration: none;
+        }
+    }
+    
+    .right {
+        right: 20px !important;
+    }
+    
+    .carousel-control {
+        opacity: 1 !important;
+        
+        &:hover {
+            opacity: 0.7 !important;
+        }
+        
+        span {
+            width: 40px;
+            padding: 10px;
+            background-color: @ticker_highlight_color;
+        }
+    }
+
+    div {
+        padding-top: 15px;
+        font-size: 2em;
+        line-height: 1em;
+        font-weight: normal;
+        color: @ticker_font_color;
+        font-family: Arial;
+    }
+    
+    .controls {
+        padding-top: 33px;
+    }
+} /* Ticker */
+
+/* Small devices (tablets, 768px and up) */
+@media (min-width: @screen-sm-min) {
+    
+} /* End small/tablets devices */
+
+/* Medium devices (desktops, 992px and up) */
+@media (min-width: @screen-md-min) {
+    
+    
+} /* End medium devices */
+
+/* Large devices (large desktops, 1200px and up) */
+@media (min-width: @screen-lg-min) {
+    
+} /* End large devices */
+
+    

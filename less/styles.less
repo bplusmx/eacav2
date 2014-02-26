@@ -1,0 +1,109 @@
+/* 
+    Document   : style
+    Author     : luisabarca
+    Description:
+        Estilos globales.
+*/
+
+/* variables from Bootstrap */
+@import "../components/bootstrap/less/variables.less";
+@import "../components/bootstrap/less/mixins.less";
+
+@import "global.less";
+/*@import "layout.less";*/
+/*@import "carousel.less";*/
+/*@import "ticker.less";*/
+/*@import "featured-box.less";*/
+/*@import "header.less";*/
+/*@import "menu-desplegable.less";*/
+/*@import "buscador.less";*/
+/*@import "home-noticias.less";*/
+/*@import "editors-pick.less";*/
+/*@import "newsletter.less";*/
+
+/* CUSTOMIZE THE NAVBAR
+-------------------------------------------------- */
+
+#topmenu {
+    background-color: rgba(255, 255, 255, .95);
+    border: 0;
+
+    -webkit-box-shadow: 0 2px 10px rgba(0,0,0,.25);
+       -moz-box-shadow: 0 2px 10px rgba(0,0,0,.25);
+            box-shadow: 0 2px 10px rgba(0,0,0,.25);
+    
+    /* Downsize the brand/project name a bit */
+    .navbar-nav > li {
+        font-size: 16px;
+        font-weight: bold;
+        
+        /* Navbar links: increase padding for taller navbar */
+        a {
+          padding: 10px 15px;
+          line-height: 60px;
+        }
+    }
+    
+    .navbar-brand img {
+        height: 48px;
+    }
+}
+
+.page-wrapper {
+    background-color: #fff;
+    border: 1px solid #f9f9f9;
+    .box-shadow(1px 0 1px #f9f9f9);
+}
+
+/* Tabs con colores */
+.custom-nav-tabs {
+    padding-top: 10px;
+    padding-left: 4px;
+    padding-right: 4px;
+    font-weight: bold;
+    
+    li {
+        text-transform: uppercase;
+        
+        a {
+            color: white;
+        }
+        
+        a:hover {
+            color: #444;
+        }
+    }
+    
+    /* Tab activa en color negro */
+    .active > a {
+        color: #444;
+    }
+}
+
+.blue-bg {
+    .custom-nav-tabs {
+        background-color: #0073ae;
+    }
+}
+
+.green-bg {
+    background-color: #b5cd32;
+    color: #fff;
+}
+
+/* Small devices (tablets, 768px and up) */
+@media (min-width: @screen-sm-min) {
+
+} /* End small/tablets devices */
+
+/* Medium devices (desktops, 992px and up) */
+@media (min-width: @screen-md-min) {
+
+} /* End medium devices */
+
+/* Large devices (large desktops, 1200px and up) */
+@media (min-width: @screen-lg-min) {
+
+} /* End large devices */
+
+    
