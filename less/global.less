@@ -1,9 +1,54 @@
 /* GLOBAL STYLES
     -------------------------------------------------- */
 
-body {
-    margin-top: 10px;
-    
+@eaca_green: #b4d133;
+@eaca_orange: #fecd43;
+
+@footer_background_color: lighten(@eaca_orange, 5%);
+
+h1, h2, h3, h4, h5, h6 {
+    font-family: 'Nunito',sans-serif !important;
 }
 
+h1, h2 {
+    font-weight:400
+}
 
+body {
+    background: #fff url("../img/bg.jpg") center top no-repeat;
+}
+
+footer {
+    background-color: @footer_background_color;
+    border-top: 2px solid darken(@footer_background_color, 20%);
+    color: #444;
+    padding-top: 20px;
+
+    a {
+        color: #000;
+        text-decoration: underline;
+    }
+}
+
+.breadcrumbs {
+    color:#888;font-size:12px}.breadcrumbs a{color:#888;text-decoration:underline
+}
+
+.bs-callout {
+    margin:10px 0 20px 0;padding:20px;border-left:3px solid #eee
+}
+
+.bs-callout h2,
+.bs-callout h4{
+    margin-top:0;
+    margin-bottom:5px
+}
+.bs-callout p:last-child{ 
+    margin-bottom:0
+}
+.bs-callout-danger{background-color:#fdf7f7;border-color:#eed3d7}
+.bs-callout-danger h2,.bs-callout-danger h4{color:#b94a48}
+.bs-callout-warning{background-color:#faf8f0;border-color:#faebcc}
+.bs-callout-warning h2,.bs-callout-warning h4{color:#8a6d3b}
+.bs-callout-info{background-color:#f4f8fa;border-color:#bce8f1}
+.bs-callout-info h2,.bs-callout-info h4{color:#000}
