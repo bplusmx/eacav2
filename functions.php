@@ -1,26 +1,93 @@
 <?php
 
+include 'vendor/class-tgm-plugin-activation.php';
+include 'lib/required-plugins.php';
+//include 'lib/custom-fields.php';
 
-/** Tell WordPress to run twentyten_setup() when the 'after_setup_theme' hook is run. */
-add_action( 'after_setup_theme', 'eaca2009_setup' );
+add_action('after_setup_theme', 'eacav2_setup' );
 
-if (!function_exists('eaca2009_setup')) {
-function eaca2009_setup() {
-
-    // This theme styles the visual editor with editor-style.css to match the theme style.
-    add_editor_style();
-
-    // This theme uses post thumbnails
-    add_theme_support( 'post-thumbnails' );
-
-    // Add default posts and comments RSS feed links to head
-    add_theme_support( 'automatic-feed-links' );
-
-    // This theme uses wp_nav_menu() in one location.
-    register_nav_menus( array(
-        'primary' => __( 'Menu superior'),
-    ) );
+function wp_no_menu($class = '')
+{
+    ?>
+    <ul class="nav nav-pills pull-right">
+        <li><a href="<?php echo admin_url('nav-menus.php') ?>">1. Defina un menú</a></li>
+        <li><a href="<?php echo admin_url('nav-menus.php?action=locations') ?>">2. Asignelo a esta sección (menú superior)</a></li>
+    </ul>
+    <?php 
 }
+
+function the_menu_primary()
+{
+    $menu_args = array( 
+        'theme_location' => 'primary',
+        'menu_class' => 'nav nav-pills pull-right', 
+        'fallback_cb' => 'wp_no_menu',
+        'sort_column' => 'menu_order', 
+        'menu_class' => 'nav nav-pills pull-right', 
+        'echo' => 0
+    );
+    
+    echo wp_nav_menu($menu_args);
+}
+
+if (!function_exists('eacav2_setup')) {
+    function eacav2_setup() 
+    {
+        // This theme styles the visual editor with editor-style.css to match the theme style.
+        add_editor_style();
+
+        // This theme uses post thumbnails
+        add_theme_support( 'post-thumbnails' );
+
+        // Add default posts and comments RSS feed links to head
+        add_theme_support( 'automatic-feed-links' );
+        
+        // Tipos de entradas
+        add_theme_support('post-formats', array( 
+            'aside', 'image', 'gallery', 'link', 'quote', 'status', 'video', 'audio' 
+        ));
+
+        // This theme uses wp_nav_menu() in one location.
+        register_nav_menus( array(
+            'primary' => __( 'Menu superior'),
+        ) );
+    }
+}
+
+
+add_action('wp_enqueue_scripts', 'eacav2_add_scripts');
+
+function eacav2_add_scripts()
+{
+    $path = get_bloginfo('stylesheet_directory');
+
+    wp_enqueue_script('jquery', $path . '/components/jquery/dist/jquery.js');
+    
+    wp_enqueue_script('bootstrap', $path . '/components/bootstrap/dist/js/bootstrap.min.js', array('jquery'));
+    
+    wp_enqueue_script('resbox', $path . '/ResBox/JS/Default_ESPX.js', array('jquery'));
+    wp_enqueue_script('resbox-calendar', $path . '/ResBox/JS/Calendar_ESPX.js', array('resbox'));
+    wp_enqueue_script('resbox-fechas', $path . '/ResBox/JS/fechas_ESPX.js', array('resbox-calendar'));
+    wp_enqueue_script('resbox-default', $path . '/ResBox/JS/DefaultX.js', array('resbox-fechas'));
+
+    wp_enqueue_script('jquery-jcarousel', $path . '/js/jquery.jcarousel.js', array('jquery'));
+    wp_enqueue_script('jquery-actions', $path . '/js/jquery.actions.js', array('jquery-jcarousel'));
+}
+
+add_action('wp_enqueue_scripts', 'eacav2_add_styles');
+
+function eacav2_add_styles()
+{
+    $path = get_bloginfo('stylesheet_directory');
+    
+    wp_enqueue_style('font-nunito', 'http://fonts.googleapis.com/css?family=Nunito:400,700');
+    wp_enqueue_style('font-awesome', '//netdna.bootstrapcdn.com/font-awesome/4.0.3/css/font-awesome.css');
+    
+    wp_enqueue_style('bootstrap', $path . '/components/bootstrap/dist/css/bootstrap.css');    
+    wp_enqueue_style('bootstrap-flat-ui', $path . '/components/flat-ui-official/css/flat-ui.css', array('bootstrap'));
+    wp_enqueue_style('eacapulco', $path . '/css/styles.css', array('bootstrap'));
+    
+    wp_enqueue_style('resbox', $path . '/ResBox/CSS/ResBox.css');
 }
 
 if ( function_exists('register_sidebar') )
@@ -56,7 +123,8 @@ function the_feature_thumb($ID, $size = 'intermediate', $echo = true)
     return $res;
 }
 }
-    
+
+
 function dp_recent_comments($no_comments = 10, $comment_len = 150) { 
     global $wpdb; 
 	
@@ -82,46 +150,3 @@ function dp_recent_comments($no_comments = 10, $comment_len = 150) {
 		echo "<li>No comments</li>";
 	}
 }
-
-function dp_get_author($comment) {
-	$author = "";
-
-	if ( empty($comment->comment_author) )
-		$author = __('Anonymous');
-	else
-		$author = $comment->comment_author;
-		
-	return $author;
-}
-
-/*
-Plugin Name: Gravatar
-Plugin URI: http://www.gravatar.com/implement.php#section_2_2
-Description: This plugin allows you to generate a gravatar URL complete with rating, size, default, and border options. See the <a href="http://www.gravatar.com/implement.php#section_2_2">documentation</a> for syntax and usage.
-Version: 1.1
-Author: Tom Werner
-Author URI: http://www.mojombo.com/
-
-CHANGES
-2004-11-14 Fixed URL ampersand XHTML encoding issue by updating to use proper entity
-*/
-
-function gravatar($rating = false, $size = false, $default = false, $border = false) {
-	global $comment;
-	$out = "http://www.gravatar.com/avatar.php?gravatar_id=".md5($comment->comment_author_email);
-	if($rating && $rating != '')
-		$out .= "&amp;rating=".$rating;
-	if($size && $size != '')
-		$out .="&amp;size=".$size;
-	if($default && $default != '')
-		$out .= "&amp;default=".urlencode($default);
-	if($border && $border != '')
-		$out .= "&amp;border=".$border;
-	echo $out;
-}
-
-/* Trackback */
-function trackTheme($name=""){
-}
-
-?>
