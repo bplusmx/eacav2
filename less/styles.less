@@ -6,23 +6,23 @@
 */
 
 /* variables from Bootstrap */
-@import "../components/bootstrap/less/variables.less";
-@import "../components/bootstrap/less/mixins.less";
+@import (reference) "../components/bootstrap/less/bootstrap.less";
 
 @import "global.less";
+@import "featured-carousel.less";
 /*@import "layout.less";*/
-/*@import "carousel.less";*/
-/*@import "ticker.less";*/
 /*@import "featured-box.less";*/
 /*@import "header.less";*/
 /*@import "menu-desplegable.less";*/
-/*@import "buscador.less";*/
-/*@import "home-noticias.less";*/
-/*@import "editors-pick.less";*/
 /*@import "newsletter.less";*/
 
 /* CUSTOMIZE THE NAVBAR
 -------------------------------------------------- */
+
+.nav-pills > li > a {
+    font-size: 1.2em !important;
+    line-height: 57px !important;
+}
 
 #topmenu {
     background-color: rgba(255, 255, 255, .95);
