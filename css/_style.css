@@ -1,12 +1,7 @@
 /*
 
 */
-/* Begin Typography & Colors */
-* { margin: 0; padding: 0; }
-body { 
-    background: #abdebe url("../images/bg-body.jpg") center top no-repeat;
-    font: normal 12px "Verdana", sans-serif; margin: 0px; padding: 0px; 
-}
+
 input, button, textarea, select {  font: normal 12px/12px "Verdana", sans-serif; color:#373737; vertical-align: middle; }
 legend { display: none; }
 fieldset { border: none; }
@@ -470,7 +465,7 @@ img.alignleft { padding: 1px; margin: 0 15px 5px 0; display: inline; border: sol
         height: 300px;
     }
 
-    /* Tamaªª¡Şo de la lista */
+    /* Tamaï¿½ï¿½ï¿½ï¿½ï¿½o de la lista */
 
      #features-nav span {
         display: none; 	
