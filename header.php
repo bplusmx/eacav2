@@ -7,13 +7,13 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no">
 
     <!-- Windows 8 Apps -->
-    <meta name="application-name" content="E-Acapulco.com"/>
-<meta name="msapplication-TileColor" content="#00189e"/>
-<meta name="msapplication-square70x70logo" content="<?php bloginfo('template_directory'); ?>/ie/tiny.png"/>
-<meta name="msapplication-square150x150logo" content="<?php bloginfo('template_directory'); ?>/ie/square.png"/>
-<meta name="msapplication-wide310x150logo" content="<?php bloginfo('template_directory'); ?>/ie/wide.png"/>
-<meta name="msapplication-square310x310logo" content="<?php bloginfo('template_directory'); ?>/ie/large.png"/>
-<meta name="msapplication-notification" content="frequency=30;polling-uri=http://notifications.buildmypinnedsite.com/?feed=http://e-acapulco.com/acapulco/eventos/feed&amp;id=1;polling-uri2=http://notifications.buildmypinnedsite.com/?feed=http://e-acapulco.com/acapulco/noticias/feed&amp;id=2;polling-uri3=http://notifications.buildmypinnedsite.com/?feed=http://e-acapulco.com/feed&amp;id=3;polling-uri4=http://notifications.buildmypinnedsite.com/?feed=http://e-acapulco.com/feed&amp;id=4;polling-uri5=http://notifications.buildmypinnedsite.com/?feed=http://e-acapulco.com/feed&amp;id=5; cycle=1"/>
+    <meta name="application-name" content="e-Acapulco.com"/>
+    <meta name="msapplication-TileColor" content="#00189e"/>
+    <meta name="msapplication-square70x70logo" content="<?php bloginfo('template_directory'); ?>/ie/tiny.png"/>
+    <meta name="msapplication-square150x150logo" content="<?php bloginfo('template_directory'); ?>/ie/square.png"/>
+    <meta name="msapplication-wide310x150logo" content="<?php bloginfo('template_directory'); ?>/ie/wide.png"/>
+    <meta name="msapplication-square310x310logo" content="<?php bloginfo('template_directory'); ?>/ie/large.png"/>
+    <meta name="msapplication-notification" content="frequency=30;polling-uri=http://notifications.buildmypinnedsite.com/?feed=http://e-acapulco.com/eventos/feed&amp;id=1;polling-uri2=http://notifications.buildmypinnedsite.com/?feed=http://e-acapulco.com/acapulco/noticias/feed&amp;id=2;polling-uri3=http://notifications.buildmypinnedsite.com/?feed=http://e-acapulco.com/feed&amp;id=3; cycle=1"/>
 
     <meta name="DC.title" content="<?php wp_title( '|', true, 'right' );
 
@@ -108,25 +108,13 @@ unset($terms);
 
     <?php if ( is_singular() ) wp_enqueue_script( 'comment-reply' ); ?>    
 
-    <!-- Bootstrap core CSS -->
-    <link href="<?php bloginfo('stylesheet_directory') ?>/components/bootstrap/dist/css/bootstrap.css" rel="stylesheet">
-
     <!-- HTML5 shim and Respond.js IE8 support of HTML5 elements and media queries -->
     <!--[if lt IE 9]>
       <script src="<?php bloginfo('stylesheet_directory') ?>/components/html5shiv-dist/html5shiv.js"></script>
       <script src="<?php bloginfo('stylesheet_directory') ?>/components/respond/dest/respond.min.js"></script>
     <![endif]-->
-
-    <!-- Custom styles for this template -->
-    <link href="<?php bloginfo('stylesheet_directory') ?>/css/style.css" rel="stylesheet">
-
-    <link rel="stylesheet" type="text/css" href="<?php bloginfo('stylesheet_directory') ?>/ResBox/CSS/ResBox.css" />
-    <script type="Text/JavaScript" src="<?php bloginfo('stylesheet_directory') ?>/ResBox/JS/Default_ESPX.js"></script>
-    <script type="Text/JavaScript" src="<?php bloginfo('stylesheet_directory') ?>/ResBox/JS/Calendar_ESPX.js"></script>
-    <script type="Text/JavaScript" src="<?php bloginfo('stylesheet_directory') ?>/ResBox/JS/fechas_ESPX.js"></script>
-    <script type="Text/JavaScript" src="<?php bloginfo('stylesheet_directory') ?>/ResBox/JS/DefaultX.js"></script>
-
-<?php wp_head(); ?>
+    
+<?php wp_head() ?>
 </head>
 <body <?php body_class() ?>>
 
@@ -139,79 +127,40 @@ unset($terms);
   fjs.parentNode.insertBefore(js, fjs);
 }(document, 'script', 'facebook-jssdk'));</script> 
 
-<h1 class="accesibility"><a href="/"><?php bloginfo('name'); ?> <?php if ( is_single() ) { ?> &raquo; Archivo <?php } ?> <?php wp_title(); ?></a></h1>
+<h1 class="hidden"><a href="/"><?php bloginfo('name') ?> <?php if ( is_single() ) { ?> &raquo; Archivo <?php } ?> <?php wp_title(); ?></a></h1>
 
-<h2 class="accesibility"><?php bloginfo('description'); ?></h2>	
-
+<h2 class="hidden"><?php bloginfo('description') ?></h2>	
 
 <!-- Fixed navbar -->
-    <div class="navbar navbar-default navbar-fixed-top" role="navigation">
-      <div class="container">
-        <div class="navbar-header">
-          <button type="button" class="navbar-toggle" data-toggle="collapse" data-target=".navbar-collapse">
-            <span class="sr-only">Toggle navigation</span>
-            <span class="icon-bar"></span>
-            <span class="icon-bar"></span>
-            <span class="icon-bar"></span>
-          </button>
-          <a class="navbar-brand" href="<?php bloginfo('home') ?>"><?php bloginfo('name') ?></a>
-        </div>
-        <div class="navbar-collapse collapse">
-          <ul class="nav navbar-nav">
-            <li><a href="/acapulco/hoteles" rel="bookmark">Hoteles en Acapulco</a></li>
-	    <li><a href="/acapulco/eventos/">Eventos</a></li>
-	    <li><a href="/publicidad">Anunciate</a></li>
-            <li><a href="/inicio/ayuda/">Ayuda</a></li>
-            <li><a href="http://feedproxy.google.com/E-acapulco" rel="alternate" type="application/rss+xml">
-            <img src="http://www.feedburner.com/fb/images/pub/feed-icon16x16.png" alt="" style="vertical-align:middle;border:0"/></a></li>
-          </ul>
-        </div><!--/.nav-collapse -->
-      </div>
-    </div>
-  
-<div class="container" id="access">
-  <div class="col-sm-4">
-	   <a href="<?php bloginfo('url') ?>"><img style="float:left; height: 55px" style="margin: 0; padding: 0;" src="<?php bloginfo('stylesheet_directory') ?>/images/logo.png" alt="" /></a>
-    </div>
-
-<nav class="navbar" role="navigation">
+<nav class="navbar navbar-default navbar-static-top navbar-lg" role="navigation">
   <div class="container">
-    <!-- Brand and toggle get grouped for better mobile display -->
     <div class="navbar-header">
-      <button type="button" class="navbar-toggle" data-toggle="collapse" data-target="#bs-example-navbar-collapse-1">
+      <button type="button" class="navbar-toggle" data-toggle="collapse" data-target=".navbar-collapse">
         <span class="sr-only">Toggle navigation</span>
         <span class="icon-bar"></span>
         <span class="icon-bar"></span>
         <span class="icon-bar"></span>
       </button>
-      <a class="navbar-brand hidden" href="<?php bloginfo('home') ?>"><?php bloginfo('name') ?></a>
+        <a class="navbar-brand" href="<?php bloginfo('home') ?>">
+          <img src="<?php bloginfo('stylesheet_directory') ?>/images/logo.png" alt="e-Acapulco.com" />
+        </a>
     </div>
-
-<?php wp_nav_menu( array( 
-    'container_id' => 'bs-example-navbar-collapse-1',
-    'container_class' => 'collapse navbar-collapse', 
-    'theme_location' => 'primary',
-    'menu_class' => 'nav navbar-nav'
-)); 
-?>
-
-  </div><!-- /.container -->
+    <div class="navbar-collapse collapse">
+    <?php the_menu_primary() ?>
+    </div><!--/.nav-collapse -->
+  </div>
 </nav>
-    </div>
-
-</div> <!-- /.container -->
-
-
-<!-- -->
-<div id="bg">
 
 <!-- Start Con-->
-<div class="con">
+<div class="container home-slider">
 <?php if (is_home()): ?>
-    <?php putRevSlider("sliderHome") ?>
-    <?php include 'features.php'; ?>
-<?php endif; ?>
-<!-- Start SL -->
-<div class="sc-all">
+    <div class="col-sm-9">
+        <?php include 'partials/features.php' ?>
+    </div>
+    <div class="col-sm-3">
+        <?php include 'partials/form-dispo.php' ?>
+    </div>
+<?php endif ?>
+</div>
 
-<div class="sc">
+<div class="page container">
