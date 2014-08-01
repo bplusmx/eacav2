@@ -1,0 +1,42 @@
+/*
+ * Encabezado del Sitio Web
+ *
+ */
+
+#topheader {
+    background-color: #fafafa;
+    height: 300px;
+
+    .botones {
+        margin: 2px 15px 0 0;
+        float: right;
+        
+        li {
+            display: inline-block;
+        }
+        
+        a {
+            padding: 6px 30px;
+        }
+    }
+}
+
+/* Small devices (tablets, 768px and up) */
+@media (min-width: @screen-sm-min) {
+    #topheader { 
+        height: 155px;
+        position: relative;
+        z-index: 100;
+        background: url('../img/bg-header.png') repeat-x;
+    }
+} /* End small/tablets devices */
+
+/* Medium devices (desktops, 992px and up) */
+@media (min-width: @screen-md-min) {
+    
+} /* End medium devices */
+
+/* Large devices (large desktops, 1200px and up) */
+@media (min-width: @screen-lg-min) {
+    
+} /* End large devices */
